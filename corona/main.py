@@ -1,8 +1,9 @@
 import click
+import os
 from corona import parser, save, DataInfo
 
 @click.command()
-@click.option('--fpath', default='',
+@click.option('--fpath', default=os.getcwd(),
                 help='The file path (By default current directory)')
 @click.option('--date', default=True, type=bool,
                 help='Set it True to show the update date (By default True)')
