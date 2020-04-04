@@ -1,4 +1,4 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
 
 setup(
@@ -7,7 +7,7 @@ setup(
     description='Testing installation of Package',
     author='Sayf Chagtmi',
     author_email='sayfchagtmi@gmail.com',
-    py_modules=['corona'],
+    packages=find_packages(),
     install_requires=[
         'click',
         'bs4'
