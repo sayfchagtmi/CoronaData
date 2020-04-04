@@ -1,4 +1,4 @@
-from scripts import DataInfo
+from corona import DataInfo
 DEFAULT_FILE_NAME = "Coronavirus.csv"
 
 def save_data(parsed_page, path=''):
