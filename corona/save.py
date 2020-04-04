@@ -6,10 +6,11 @@ def save_data(parsed_page, path=''):
     table = parsed_page.find("table",{"id":"main_table_countries_today"})
     rows = [row for row in table.findAll("tr")]
     headers = [th.text.replace('\n',' ').replace(',',';') for th in rows[0].findAll("th")]
-    if path[-1]=='/':
-        fpath = path+DEFAULT_FILE_NAME
-    else:
-        fpath = path+'/'+DEFAULT_FILE_NAME
+    if len(path)!=0
+        if path[-1]=='/':
+            fpath = path+DEFAULT_FILE_NAME
+        else:
+            fpath = path+'/'+DEFAULT_FILE_NAME
     f = open(fpath, "w")
     f.write(','.join(headers) + '\n')
     rows = rows[1:]
