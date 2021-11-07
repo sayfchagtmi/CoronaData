@@ -2,7 +2,7 @@ from corona import DataInfo
 DEFAULT_FILE_NAME = "Coronavirus.csv"
 
 def save_data(parsed_page, path=''):
-    update_date = parsed_page.find("div",{"style":'font-size:13px; color:#999; text-align:center'}).text.replace('Last updated: ','')
+    update_date = parsed_page.find("div",{"style":'font-size:13px; color:#999; margin-top:5px; text-align:center'}).text.replace('Last updated: ','')
     table = parsed_page.find("table",{"id":"main_table_countries_today"})
     rows = [row for row in table.findAll("tr")]
     headers = [th.text.replace('\n',' ').replace(',',';') for th in rows[0].findAll("th")]
